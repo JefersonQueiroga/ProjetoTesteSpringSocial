@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Spring-Boot Básico</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+
+<!-- Custom styles for this template -->
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+crossorigin="anonymous"/>
+
+</head>
+<body>
+
+	<div class="container py-5">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="text-center text-white mb-4">Logar</h2>
+				<div class="row">
+					<div class="col-md-6 mx-auto">
+
+						<!-- form card login -->
+						<div class="card rounded-0">
+							<div class="card-header">
+								<h3 class="mb-0">Login</h3>
+							</div>
+							<div class="card-body">
+
+								<div th:if="${error}">
+									<div class="alert alert-danger">Usuário e/ou inválidos!</div>
+								</div>
+								
+							    <form th:action="@{/signin/facebook}" method="POST">
+	        							<button  class="btn facebook-btn social-btn" type="submit"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
+	       						</form>  
+								<br/>
+								
+								<form  action="/entrar" method="post">
+								
+								
+									<div class="form-group">
+										<input name="username" class="form-control"
+											placeholder="Usuário" />
+									</div>
+
+									<div class="form-group">
+										<input type="password" name="password" class="form-control"
+											placeholder="Senha" />
+									</div>
+
+									<div class="form-group">
+										<button class="btn btn-primary btn-block">Entrar</button>
+									</div>
+
+									<div class="form-group">
+										<input type="checkbox" id="remember-me" name="remember-me" />
+										<label for="remember-me">Lembrar?</label>
+									</div>
+
+									
+								</form>
+							</div>
+							<!--/card-block-->
+						</div>
+						<!-- /form card login -->
+
+					</div>
+
+
+				</div>
+				<!--/row-->
+
+			</div>
+			<!--/col-->
+		</div>
+		<!--/row-->
+	</div>
+	<!--/container-->
+
+
+</body>
+</html>
